@@ -9,17 +9,17 @@ export default function AliasForm({ alias, error }) {
 
             <div>
                 <label htmlFor="Type" className="block text-sm font-medium text-gray-300">Type</label>
-                <input type="text" name="Type" id="Type" required className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={alias?.Type || ''} />
+                <input type="text" name="Type" id="Type" required className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={alias?.Type || ''} />
             </div>
 
             <div>
                 <label htmlFor="Name" className="block text-sm font-medium text-gray-300">Name</label>
-                <input type="text" name="Name" id="Name" required className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={alias?.Name || ''} />
+                <input type="text" name="Name" id="Name" required className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={alias?.Name || ''} />
             </div>
 
             <div>
                 <label htmlFor="Aliases" className="block text-sm font-medium text-gray-300">Aliases (comma-separated)</label>
-                <input type="text" name="Aliases" id="Aliases" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={alias?.Aliases || ''} />
+                <input type="text" name="Aliases" id="Aliases" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={alias?.Aliases || ''} />
             </div>
 
             <div className="flex justify-end space-x-4 pt-4">

@@ -9,12 +9,12 @@ export default function CategoryForm({ category, error }) {
 
             <div>
                 <label htmlFor="Name" className="block text-sm font-medium text-gray-300">Name</label>
-                <input type="text" name="Name" id="Name" required className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={category?.Name || ''} />
+                <input type="text" name="Name" id="Name" required className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={category?.Name || ''} />
             </div>
 
             <div>
                 <label htmlFor="Description" className="block text-sm font-medium text-gray-300">Description</label>
-                <textarea name="Description" id="Description" rows="4" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={category?.Description || ''}></textarea>
+                <textarea name="Description" id="Description" rows="4" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={category?.Description || ''}></textarea>
             </div>
 
             <div className="flex justify-end space-x-4 pt-4">

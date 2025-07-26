@@ -10,53 +10,53 @@ export default function ToolForm({ tool, categories, articles = [], pricingOptio
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label htmlFor="Name" className="block text-sm font-medium text-gray-300">Name</label>
-                    <input type="text" name="Name" id="Name" required className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={tool?.Name || ''} />
+                    <input type="text" name="Name" id="Name" required className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={tool?.Name || ''} />
                 </div>
                 <div>
                     <label htmlFor="Domain" className="block text-sm font-medium text-gray-300">Domain</label>
-                    <input type="text" name="Domain" id="Domain" required className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={tool?.Domain || ''} />
+                    <input type="text" name="Domain" id="Domain" required className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={tool?.Domain || ''} />
                 </div>
             </div>
 
             <div>
                 <label htmlFor="Website" className="block text-sm font-medium text-gray-300">Website</label>
-                <input type="text" name="Website" id="Website" required className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={tool?.Website || ''} />
+                <input type="text" name="Website" id="Website" required className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={tool?.Website || ''} />
             </div>
 
             <div>
                 <label htmlFor="Why" className="block text-sm font-medium text-gray-300">Why</label>
-                <textarea name="Why" id="Why" rows="3" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={tool?.Why || ''}></textarea>
+                <textarea name="Why" id="Why" rows="3" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={tool?.Why || ''}></textarea>
             </div>
 
             <div>
                 <label htmlFor="Description" className="block text-sm font-medium text-gray-300">Description</label>
-                <textarea name="Description" id="Description" rows="3" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={tool?.Description || ''}></textarea>
+                <textarea name="Description" id="Description" rows="3" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={tool?.Description || ''}></textarea>
             </div>
             <div>
                 <label htmlFor="Details" className="block text-sm font-medium text-gray-300">Details</label>
-                <textarea name="Details" id="Details" rows="5" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={tool?.Details || ''}></textarea>
+                <textarea name="Details" id="Details" rows="5" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={tool?.Details || ''}></textarea>
             </div>
 
             <div>
                 <label htmlFor="Features" className="block text-sm font-medium text-gray-300">Features</label>
-                <textarea name="Features" id="Features" rows="5" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={Array.isArray(tool?.Features) ? tool.Features.join('\n') : tool?.Features || ''}></textarea>
+                <textarea name="Features" id="Features" rows="5" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={Array.isArray(tool?.Features) ? tool.Features.join('\n') : tool?.Features || ''}></textarea>
             </div>
 
             <div>
                 <label htmlFor="Cautions" className="block text-sm font-medium text-gray-300">Cautions</label>
-                <textarea name="Cautions" id="Cautions" rows="3" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={Array.isArray(tool?.Cautions) ? tool.Cautions.join('\n') : tool?.Cautions || ''}></textarea>
+                <textarea name="Cautions" id="Cautions" rows="3" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={Array.isArray(tool?.Cautions) ? tool.Cautions.join('\n') : tool?.Cautions || ''}></textarea>
             </div>
 
             <div>
                 <label htmlFor="Tags" className="block text-sm font-medium text-gray-300">Tags</label>
-                <textarea name="Tags" id="Tags" rows="2" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={Array.isArray(tool?.Tags) ? tool.Tags.join(', ') : tool?.Tags || ''}></textarea>
+                <textarea name="Tags" id="Tags" rows="2" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={Array.isArray(tool?.Tags) ? tool.Tags.join(', ') : tool?.Tags || ''}></textarea>
                 <p className="mt-1 text-xs text-gray-400">Comma-separated list of tags for the tag cloud.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                     <label htmlFor="Buyer" className="block text-sm font-medium text-gray-300">Buyer</label>
-                    <input type="text" name="Buyer" id="Buyer" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={tool?.Buyer || ''} />
+                    <input type="text" name="Buyer" id="Buyer" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={tool?.Buyer || ''} />
                 </div>
                 <div>
                     <label className="block text-sm font-medium text-gray-300">Pricing</label>
@@ -78,7 +78,7 @@ export default function ToolForm({ tool, categories, articles = [], pricingOptio
                 </div>
                 <div>
                     <label htmlFor="Base_Model" className="block text-sm font-medium text-gray-300">Base Model</label>
-                    <input type="text" name="Base_Model" id="Base_Model" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={tool?.Base_Model || ''} />
+                    <input type="text" name="Base_Model" id="Base_Model" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={tool?.Base_Model || ''} />
                 </div>
             </div>
 

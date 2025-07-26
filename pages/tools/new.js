@@ -88,16 +88,32 @@ export default function NewToolPage({ categories, articles, pricingOptions, erro
     const [toolData, setToolData] = useState(null);
     const [formKey, setFormKey] = useState(Date.now()); // Used to reset the form
     const [clientError, setClientError] = useState(null);
+    const [selectedModel, setSelectedModel] = useState("anthropic/claude-3-haiku:beta");
+
+    const researchModels = [
+        { id: "anthropic/claude-3-haiku:beta", name: "Claude 3 Haiku" },
+        { id: "openai/gpt-4o", name: "OpenAI GPT-4o" },
+        { id: "mistralai/mistral-large", name: "Mistral Large" },
+        { id: "google/gemini-2.5-pro", name: "Gemini 2.5 Pro" },
+        { id: "google/gemini-2.5-flash", name: "Gemini 2.5 Flash" },
+        
+
+        
+        
+    ];
 
     const handleResearch = async () => {
         if (!researchTerm) return;
         setIsResearching(true);
         setClientError(null);
         try {
-            const response = await fetch('/api/tools/research', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ toolName: researchTerm }),
+            const response = await fetch("/api/tools/research", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    toolName: researchTerm,
+                    model: selectedModel,
+                }),
             });
 
             if (!response.ok) {
@@ -121,11 +137,29 @@ export default function NewToolPage({ categories, articles, pricingOptions, erro
             <div className="mb-8 p-6 bg-cardDark rounded-lg border border-gray-700">
                 <h2 className="text-xl font-semibold text-headingWhite mb-3">AI Research Assistant</h2>
                 <p className="text-gray-400 mb-4">Enter a tool name and let AI fill in the details.</p>
-                <div className="flex gap-2">
-                    <input type="text" value={researchTerm} onChange={(e) => setResearchTerm(e.target.value)} placeholder="e.g., Figma" className="flex-grow bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" />
-                    <button onClick={handleResearch} disabled={isResearching} className="bg-accentGreen text-backgroundDark font-bold py-2 px-4 rounded hover:bg-headingWhite transition-colors disabled:bg-gray-500 disabled:cursor-not-allowed">
-                        {isResearching ? 'Researching...' : 'Research'}
-                    </button>
+                <div className="flex flex-col gap-4">
+                    <div className="flex gap-2">
+                        <input type="text" value={researchTerm} onChange={(e) => setResearchTerm(e.target.value)} placeholder="e.g., Figma" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" />
+                        <button onClick={handleResearch} disabled={isResearching} className="bg-accentGreen text-backgroundDark font-bold py-2 px-4 rounded hover:bg-headingWhite transition-colors disabled:bg-gray-500 disabled:cursor-not-allowed">
+                            {isResearching ? 'Researching...' : 'Research'}
+                        </button>
+                    </div>
+                    <div>
+                        <label htmlFor="model-select" className="block text-sm font-medium text-gray-300 mb-1">Select Research Model</label>
+                        <select
+                            id="model-select"
+                            value={selectedModel}
+                            onChange={(e) => setSelectedModel(e.target.value)}
+                            className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600"
+                        >
+                            {[...researchModels]
+                                .sort((a, b) => a.name.localeCompare(b.name))
+                                .map(model => (
+                                    <option key={model.id} value={model.id}>{model.name}</option>
+                                ))
+                            }
+                        </select>
+                    </div>
                 </div>
                 {clientError && <p className="text-red-500 mt-2">{clientError}</p>}
             </div>

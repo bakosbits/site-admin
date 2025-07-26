@@ -15,17 +15,17 @@ export default function ArticleForm({ article, error }) {
 
             <div>
                 <label htmlFor="Title" className="block text-sm font-medium text-gray-300">Title</label>
-                <input type="text" name="Title" id="Title" required className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={article?.Title || ''} />
+                <input type="text" name="Title" id="Title" required className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={article?.Title || ''} />
             </div>
 
             <div>
                 <label htmlFor="Summary" className="block text-sm font-medium text-gray-300">Summary</label>
-                <textarea name="Summary" id="Summary" rows="3" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={article?.Summary || ''}></textarea>
+                <textarea name="Summary" id="Summary" rows="3" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={article?.Summary || ''}></textarea>
             </div>
 
             <div>
                 <label htmlFor="Content" className="block text-sm font-medium text-gray-300">Content (Markdown)</label>
-                <textarea name="Content" id="Content" rows="10" className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-accentGreen focus:border-accentGreen" defaultValue={article?.Content || ''}></textarea>
+                <textarea name="Content" id="Content" rows="10" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" defaultValue={article?.Content || ''}></textarea>
             </div>
 
             <div className="flex items-center">
