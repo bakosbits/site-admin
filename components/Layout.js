@@ -69,7 +69,7 @@ export default function Layout({ children }) {
             </header>
             {/* Main content */}
             <main className="flex-1 w-full px-6 py-4">
-                <div className="mt-20 md:mt-32 mb-6">
+                <div className="mx-0 md:mx-20 mt-20 md:mt-32 mb-6">
                     {children}
                 </div>
             </main>
