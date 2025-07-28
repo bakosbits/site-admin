@@ -30,8 +30,9 @@ export async function getServerSideProps({ req, res }) {
 
 export default function NewAliasPage({ error }) {
     return (
-        <div>
-            <h1 className="text-3xl font-bold text-headingWhite mb-6">New Alias</h1>
+        <div className="w-[80%] mx-auto">
+            <Link href="/aliases" className="text-emerald-300 hover:text-emerald-400 mb-6 inline-block">&larr; Back to Aliases</Link>
+            <h1 className="text-3xl font-bold text-gray-100 mb-6">New Alias</h1>
             <AliasForm error={error} />
         </div>
     );

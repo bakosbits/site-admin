@@ -54,10 +54,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                     }}
                     className={`py-2 rounded text-sm min-w-[40px] text-center ${
                         page === currentPage
-                            ? "bg-accentGreen text-black font-bold"
+                            ? "bg-emerald-500 text-black font-bold"
                             : page === "…"
                               ? "cursor-default text-gray-400"
-                              : "bg-gray-700 text-white hover:bg-gray-600"
+                              : "bg-gray-700 text-gray-100 hover:bg-gray-600"
                     }`}
                 >
                     {page}

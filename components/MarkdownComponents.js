@@ -6,7 +6,7 @@ export const MarkdownImage = ({ node, ...props }) => {
     return (
         <img
             {...props} // Pass through original src, alt, title
-            className="my-6 object-contain border border-gray-700 rounded-lg block mx-auto w-full h-auto shadow-4xl shadow-[0_6px_16px_rgba(0,255,128,0.25)]" // Apply Tailwind classes
+            className="my-6 object-contain border border-gray-600 rounded-lg block mx-auto w-full h-auto shadow-4xl shadow-[0_6px_16px_rgba(0,255,128,0.25)]" // Apply Tailwind classes
         />
     );
 };
@@ -15,7 +15,7 @@ export const MarkdownLink = ({ node, ...props }) => {
     return (
         <a
             {...props}
-            className="text-accentGreen no-underline hover:text-headingWhite transition-colors"
+            className="text-green-300 no-underline hover:text-gray-100 transition-colors"
             target={props.href?.startsWith("http") ? "_blank" : undefined}
             rel={
                 props.href?.startsWith("http")

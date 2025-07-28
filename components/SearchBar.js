@@ -26,12 +26,12 @@ export default function SearchBar() {
                             setQuery(e.target.value);
                         }}
                         placeholder="Search tools..."
-                        className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600"
+                        className="w-full mt-1 px-4 py-2 rounded-md bg-gray-800 text-gray-100 placeholder-text-gray-100 border border-gray-600"
                     />
                 </div>
                 <button
                     type="submit"
-                    className="flex items-center gap-1 bg-accentGreen text-backgroundDark px-3 py-1.5 rounded font-semibold hover:bg-headingWhite transition"
+                    className="flex items-center gap-1 bg-emerald-500 text-gray-100 px-3 py-1.5 rounded font-semibold hover:bg-emerald-600 transition"
                     aria-label="Search"
                 >
                     <svg

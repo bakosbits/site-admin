@@ -3,14 +3,14 @@ import MobileMenu from "./MobileMenu"; // adjust path if needed
 
 export default function Layout({ children }) {
     return (
-        <div className="bg-backgroundDark text-grayText min-h-screen flex flex-col">
+        <div className="bg-gray-800 text-gray-400 min-h-screen flex flex-col">
             {/* Header */}
-            <header className="fixed top-0 left-0 right-0 z-50 bg-backgroundDark border-b border-gray-700  flex items-center justify-between">
+            <header className="fixed top-0 left-0 right-0 z-50 bg-gray-800 border border-gray-600  flex items-center justify-between">
                 {/* Unified Header */}
                 <div className="w-full px-4 py-4 flex items-center justify-between">
                     <Link
                         href="/"
-                        className="text-accentGreen text-3xl font-bold hover:text-headingWhite color: headingWhite tracking-tighter"
+                        className="text-emerald-400 text-3xl font-bold hover:text-emerald-500 tracking-tighter transition-colors duration-150"
                     >
                         <div className="flex justify-left gap-4 items-center">
                             {/* Logo (always visible) */}
@@ -32,33 +32,39 @@ export default function Layout({ children }) {
                     <nav className="hidden lg:flex items-center space-x-6 font-semibold">
                         <Link
                             href="/"
-                            className="text-grayText hover:text-headingWhite transition-colors duration-150"
+                            className="text-gray-400 hover:text-gray-500 transition-colors duration-150"
                         >
                             Home
                         </Link>
                         <Link
-                            href="/aliases"
-                            className="text-grayText hover:text-headingWhite transition-colors duration-150"
+                            href="/foundational-models"
+                            className="text-gray-400 hover:text-gray-500 transition-colors duration-150"
                         >
-                            Aliases
-                        </Link>
-                        <Link
-                            href="/articles"
-                            className="text-grayText hover:text-headingWhite transition-colors duration-150"
-                        >
-                            Articles
+                            Foundational Models
                         </Link>
                         <Link
                             href="/categories"
-                            className="text-grayText hover:text-headingWhite transition-colors duration-150"
+                            className="text-gray-400 hover:text-gray-500 transition-colors duration-150"
                         >
                             Categories
                         </Link>
                         <Link
-                            href="/tools"
-                            className="text-grayText hover:text-headingWhite transition-colors duration-150"
+                            href="/use-cases"
+                            className="text-gray-400 hover:text-gray-500 transition-colors duration-150"
                         >
-                            Tools
+                            Use Cases
+                        </Link>
+                        <Link
+                            href="/tools"
+                            className="text-gray-400 hover:text-gray-500 transition-colors duration-150"
+                        >
+                            All Tools
+                        </Link>
+                        <Link
+                            href="/blog"
+                            className="text-gray-400 hover:text-gray-500 transition-colors duration-150"
+                        >
+                            Blog
                         </Link>
                     </nav>
                     {/* Mobile Menu Toggle */}
@@ -69,12 +75,46 @@ export default function Layout({ children }) {
             </header>
             {/* Main content */}
             <main className="flex-1 w-full px-6 py-4">
-                <div className="mx-0 md:mx-20 mt-20 md:mt-32 mb-6">
+                <div className="mt-20 md:mt-32 mb-6">
                     {children}
                 </div>
             </main>
             {/* Footer */}
-            <footer className="py-4  text-grayText">
+            <footer className="py-4  text-gray-400">
+                <div className="w-full px-0 md:px-6 max-w-7xl mx-auto font-semibold">
+                    <nav className="flex flex-wrap justify-center space-x-6">
+                        <Link
+                            href="/about"
+                            className="text-gray-400 hover:text-gray-100 transition-colors duration-150"
+                        >
+                            About
+                        </Link>
+                        <Link
+                            href="/contact"
+                            className="text-gray-400 hover:text-gray-100 transition-colors duration-150"
+                        >
+                            Contact
+                        </Link>
+                        <Link
+                            href="/legal"
+                            className="text-gray-400 hover:text-gray-100 transition-colors duration-150"
+                        >
+                            Legal
+                        </Link>
+                        <Link
+                            href="/privacy"
+                            className="text-gray-400 hover:text-gray-100 transition-colors duration-150"
+                        >
+                            Privacy
+                        </Link>
+                        <Link
+                            href="/terms"
+                            className="text-gray-400 hover:text-gray-100 transition-colors duration-150"
+                        >
+                            Terms
+                        </Link>
+                    </nav>
+                </div>
             </footer>
         </div>
     );

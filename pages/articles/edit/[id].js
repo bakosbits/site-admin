@@ -47,9 +47,9 @@ export async function getServerSideProps({ req, res, params }) {
 
 export default function EditArticlePage({ article, error }) {
     return (
-        <div>
-            <Link href="/articles" className="text-accentGreenhover:text-headingWhite mb-6 inline-block">&larr; Back to Articles</Link>
-            <h1 className="text-3xl font-bold text-headingWhite mb-6">Edit Article</h1>
+        <div className="w-[80%] mx-auto">
+            <Link href="/articles" className="text-emerald-300 hover:text-emerald-400 mb-6 inline-block">&larr; Back to Articles</Link>
+            <h1 className="text-3xl font-bold text-gray-100 mb-6">Edit Article</h1>
             <ArticleForm article={article} error={error} />
         </div>
     );

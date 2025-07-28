@@ -30,8 +30,9 @@ export async function getServerSideProps({ req, res }) {
 
 export default function NewCategoryPage({ error }) {
     return (
-        <div>
-            <h1 className="text-3xl font-bold text-headingWhite mb-6">New Category</h1>
+        <div className="w-[80%] mx-auto">
+            <Link href="/categories"  className="text-emerald-300 hover:text-emerald-400 mb-6 inline-block">&larr; Back to Categories</Link>
+            <h1 className="text-3xl font-bold text-gray-100 mb-6">New Category</h1>
             <CategoryForm error={error} />
         </div>
     );

@@ -1,7 +1,7 @@
+import ToolForm from "@/components/ToolForm";
 import { createTool } from "@/lib/shared/tools";
 import { getAllCategoriesForAdmin } from "@/lib/shared/categories";
 import { getAllArticlesForAdmin } from "@/lib/shared/articles";
-import ToolForm from "@/components/ToolForm";
 import { parseToolForm } from "@/lib/form-helpers";
 import { PRICING_OPTIONS } from "@/lib/constants";
 import { useState } from "react";
@@ -107,7 +107,7 @@ export default function NewToolPage({ categories, articles, pricingOptions, erro
         setIsResearching(true);
         setClientError(null);
         try {
-            const response = await fetch("/api/tools/research", {
+            const response = await fetch("/api/research-tool", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -132,15 +132,16 @@ export default function NewToolPage({ categories, articles, pricingOptions, erro
     };
 
     return (
-        <div>
-            <h1 className="text-3xl font-bold text-headingWhite mb-6">New Tool</h1>
-            <div className="mb-8 p-6 bg-cardDark rounded-lg border border-gray-700">
-                <h2 className="text-xl font-semibold text-headingWhite mb-3">AI Research Assistant</h2>
-                <p className="text-gray-400 mb-4">Enter a tool name and let AI fill in the details.</p>
-                <div className="flex flex-col gap-4">
-                    <div className="flex gap-2">
-                        <input type="text" value={researchTerm} onChange={(e) => setResearchTerm(e.target.value)} placeholder="e.g., Figma" className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600" />
-                        <button onClick={handleResearch} disabled={isResearching} className="bg-accentGreen text-backgroundDark font-bold py-2 px-4 rounded hover:bg-headingWhite transition-colors disabled:bg-gray-500 disabled:cursor-not-allowed">
+        <div className="w-[80%] mx-auto">
+            <Link href="/tools"  className="text-emerald-300 hover:text-emerald-400 mb-6 inline-block">&larr; Back to Tools</Link>
+            <h1 className="text-3xl font-bold text-gray-100 mb-6">New Tool</h1>
+            <div className="mb-8 p-8 bg-cardDark rounded-lg border border-gray-600">
+                <h2 className="text-xl font-semibold text-gray-100 mb-4">AI Research Assistant</h2>
+                <p className="text-gray-300 text-sm mb-1">Enter A Tool Name</p>
+                <div className="flex flex-col gap-4 mb-4">
+                    <div className="flex gap-4">
+                        <input type="text" value={researchTerm} onChange={(e) => setResearchTerm(e.target.value)} placeholder="e.g., Figma" className="w-full mt-1 px-4 py-2 rounded-md bg-gray-800 text-gray-100 placeholder-text-gray-100 border border-gray-600" />
+                        <button onClick={handleResearch} disabled={isResearching} className="bg-emerald-500 text-gray-100 font-bold mt-1 px-4 rounded hover:bg-emerald-600 transition-colors disabled:bg-gray-500 disabled:cursor-not-allowed">
                             {isResearching ? 'Researching...' : 'Research'}
                         </button>
                     </div>
@@ -150,7 +151,7 @@ export default function NewToolPage({ categories, articles, pricingOptions, erro
                             id="model-select"
                             value={selectedModel}
                             onChange={(e) => setSelectedModel(e.target.value)}
-                            className="w-full mt-1 px-4 py-2 rounded-md bg-backgroundDark text-headingWhite placeholder-text-headingWhite border border-gray-600"
+                            className="w-full mt-1 px-4 py-2 rounded-md bg-gray-800 text-gray-100 placeholder-text-gray-100 border border-gray-600"
                         >
                             {[...researchModels]
                                 .sort((a, b) => a.name.localeCompare(b.name))

@@ -13,7 +13,7 @@ export default function MobileMenu() {
                 className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
             >
                 <svg
-                    className="h-6 w-6 text-grayText"
+                    className="h-6 w-6 text-gray-300"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -40,22 +40,22 @@ export default function MobileMenu() {
 
             {/* Full-screen menu panel */}
             {open && (
-                <nav className="fixed inset-0 z-50 bg-backgroundDark text-grayText p-6">
+                <nav className="fixed inset-0 z-50 bg-gray-800 text-gray-300 p-6">
                     {/* Close button */}
                     <button
                         onClick={() => setOpen(false)}
                         aria-label="Close menu"
-                        className="absolute top-4 right-4 text-3xl text-grayText"
+                        className="absolute top-4 right-4 text-3xl text-gray-300"
                     >
                         &times;
                     </button>
                     {/* Menu Links */}
-                    <ul className="flex flex-col gap-6 mt-16 text-xl text-grayText">
+                    <ul className="flex flex-col gap-6 mt-16 text-xl text-gray-300">
                         <li>
                             <Link
                                 href="/"
                                 onClick={() => setOpen(false)}
-                                className="hover:text-headingWhite"
+                                className="hover:text-white"
                             >
                                 Home
                             </Link>
@@ -64,7 +64,7 @@ export default function MobileMenu() {
                             <Link
                                 href="/aliases"
                                 onClick={() => setOpen(false)}
-                                className="hover:text-headingWhite"
+                                className="hover:text-white"
                             >
                                 Aliases
                             </Link>
@@ -73,7 +73,7 @@ export default function MobileMenu() {
                             <Link
                                 href="/articles"
                                 onClick={() => setOpen(false)}
-                                className="hover:text-headingWhite"
+                                className="hover:text-white"
                             >
                                 Articles
                             </Link>
@@ -82,7 +82,7 @@ export default function MobileMenu() {
                             <Link
                                 href="/categories"
                                 onClick={() => setOpen(false)}
-                                className="hover:text-headingWhite"
+                                className="hover:text-white"
                             >
                              Categories
                             </Link>
@@ -91,7 +91,7 @@ export default function MobileMenu() {
                             <Link
                                 href="/tools"
                                 onClick={() => setOpen(false)}
-                                className="hover:text-headingWhite"
+                                className="hover:text-white"
                             >
                                 Tools
                             </Link>
