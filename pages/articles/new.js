@@ -34,14 +34,14 @@ export default function NewArticlePage({ error: serverError }) {
     const [articleData, setArticleData] = useState(null);
     const [formKey, setFormKey] = useState(Date.now());
     const [clientError, setClientError] = useState(null);
-    const [selectedModel, setSelectedModel] = useState("anthropic/claude-3-haiku:beta");
+    const [selectedModel, setSelectedModel] = useState("anthropic/claude-3.5-haiku");
     const [selectedArticleType, setSelectedArticleType] = useState("General");
     const articleTypes = ["General", "How-To", "Affiliate"];
 
     const generationModels = [
-        { id: "anthropic/claude-3-haiku:beta", name: "Claude 3 Haiku" },
+        { id: "anthropic/claude-3.5-haiku", name: "Claude 3.5 Haiku" },
+        { id: "anthropic/claude-sonnet-4", name: "Claude 4 Sonnet" },        
         { id: "openai/gpt-4o", name: "OpenAI GPT-4o" },
-        { id: "mistralai/mistral-large", name: "Mistral Large" },
         { id: "google/gemini-2.5-pro", name: "Gemini 2.5 Pro" },
         { id: "google/gemini-2.5-flash", name: "Gemini 2.5 Flash" },
     ];

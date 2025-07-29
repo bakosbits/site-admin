@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createCategory } from "@/lib/shared/categories";
 import CategoryForm from "@/components/CategoryForm";
 import { parseFormBody } from "@/lib/form-helpers";

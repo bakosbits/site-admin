@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createAlias } from "@/lib/shared/aliases";
 import AliasForm from "@/components/AliasForm";
 import { parseFormBody } from "@/lib/form-helpers";
